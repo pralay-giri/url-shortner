@@ -1,0 +1,118 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    background-color: rgb(12, 46, 72);
+    /* background-image: linear-gradient(45deg, #e29ac8,#0593a5); */
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, 10%);
+    background-color: rgb(84, 229, 255);
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+}
+
+.container header h1{
+    font-size: large;
+    font-weight: 600;
+    padding-block: 10px;
+}
+
+.container form{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 70%;
+}
+
+.container form .inputDiv{
+    position: relative;
+}
+.container form .inputDiv input[type="text"]{
+    width: 100%;
+    border: 1px solid black;
+    padding: 8px;
+    background-color: transparent;
+    outline: none;
+    border-radius: 5px;
+}
+.container form .inputDiv label{
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    pointer-events: none;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: .4s;
+}
+
+.container form .inputDiv input[type="text"]:is(:valid, :focus)~label{
+    color: black;
+    transform: translateY(-15px);
+    font-size: 12px;
+    background-color: #54e5ff;
+    border: 1px solid black;
+    padding-inline: 3px;
+    border-top: none;
+    border-bottom: none;
+}
+
+.container form input[type="submit"]{
+    width: 100%;
+    border: 1px solid black;
+    padding: 8px;
+    background-color: #c73289;
+    outline: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+.container form input[type="submit"]:hover{
+    background-color: #a82b74;
+}
+
+.container table{
+    font-family: Arial, sans-serif;
+    border-collapse: collapse;
+    width: min(90vw, 500px);
+    color: black;
+}
+
+table :is(th){
+    font-weight: 600;
+}
+
+table :is(td){
+    font-size: 15px;
+}
+
+table :is(th, td){
+    border: 1px solid rgb(12, 46, 72);
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){
+    background-color: #cde5ff;
+}
+
+table :is(td) a{
+    text-decoration: none;
+    color: rgb(12, 46, 72);
+}
+table :is(td) a:hover{
+    color: rgb(0, 88, 155);
+}

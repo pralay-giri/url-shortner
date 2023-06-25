@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Url Shortner</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>url-shortner lets short long urls</h1>
+        </header>
+        <form action="/sortUrl" method="post">
+            <div class="inputDiv">
+                <input type="text" name="longUrl" required="required">
+                <label>enter url</label>
+            </div>
+            <input type="submit" value="short">
+        </form>
+        <table>
+            <tbody> 
+                <tr>
+                    <th>long url</th>
+                    <th>short url</th>
+                    <th>clicks</th>
+                </tr>
+                <% if (shortUrls.length> 0) { %>
+                    <% shortUrls.forEach(element=> {%>
+                        <tr>
+                            <td><a href="<%= element.fullUrl %>">
+                                    <%= element.fullUrl %>
+                                </a></td>
+                            <td><a href="/<%= element.sortUrl %>">
+                                    <%= element.sortUrl %>
+                                </a></td>
+                            <td>
+                                <%= element.clicks %>
+                            </td>
+                        </tr>
+                    <% }) %>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
