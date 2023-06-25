@@ -6,7 +6,7 @@ const shortid = require("shortid")
 const bodyParser = require("body-parser")
 const { render } = require("ejs")
 const port = process.env.port || 8800
-const uri = process.env.MONGO_URI
+const uri = "mongodb://127.0.0.1:27017/urlShortner"
 
 const createConnection = async () => {
     return await mongoose.connect(uri)
